@@ -8,23 +8,23 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 set(CMAKE_CXX_STANDARD 14)
 
+find_library( X11 x11 )
+find_library( GL gl )
+find_library( GLU glu )
+
 include_directories(../../citadel)
-link_directories(${PROJECT_SOURCE_DIR}/../../citadel/libs)
+link_directories(${PROJECT_SOURCE_DIR}/../../citadel/lib/linux)
 
 add_executable(
 	citadel-sample 
 	../../citadel-sample-game.cpp
 )
 
-find_library( X11 x11 )
-find_library( GL gl )
-find_library( GLU glu )
-
 target_link_libraries(
 	citadel-sample
 
 	citadel
-	x11
-	gl
-	glu
+	X11
+	GL
+	GLU
 )
