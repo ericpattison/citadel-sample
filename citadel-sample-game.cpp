@@ -1,15 +1,18 @@
 #include "castle/game/Game.h"
 
+
+struct GameRegistrar {
+    GameRegistrar() {
+        RegisterGame();
+    }
+};
+
 class CitadelSampleGame : public Game {
 public:
-	CitadelSampleGame(SystemWindow& window):Game(window) { }
+	CitadelSampleGame():Game() { }
 
 	virtual void Update(){}
 	virtual void Render(){}
+private:
+    static GameRegistrar registrar;
 };
-
-
-String Game::Name() { return "Citadel Sample Game"; }
-std::unique_ptr<Game> Game::Create(SystemWindow& window) {
-	return std::make_unique<CitadelSampleGame>(window);
-}
