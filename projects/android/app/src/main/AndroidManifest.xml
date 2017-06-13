@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".CitadelActivity">
-            <meta-data android:value="citadel" android:name="android.app.lib_name" />
+            <meta-data android:value="citadel-sample" android:name="android.app.lib_name" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,11 +1,5 @@
 #include "castle/game/Game.h"
-
-
-struct GameRegistrar {
-    GameRegistrar() {
-        RegisterGame();
-    }
-};
+#include <android_native_app_glue.h>
 
 class CitadelSampleGame : public Game {
 public:
@@ -14,5 +8,7 @@ public:
 	virtual void Update(){}
 	virtual void Render(){}
 private:
-    static GameRegistrar registrar;
 };
+
+UPtr<Game> createGame() { app_dummy(); return MakeUPtr<CitadelSampleGame>(); }
+GameRegistrar registrar(createGame);

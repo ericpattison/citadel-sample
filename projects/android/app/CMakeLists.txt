@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.4.1)
 
+set(citadel_DIR ${CMAKE_SOURCE_DIR}/../../../citadel)
+
 include_directories(
-    ../../../citadel
     ${ANDROID_NDK}/sources/android/native_app_glue
 )
 
@@ -13,20 +14,25 @@ add_library(
     ../../../citadel-sample-game.cpp
 )
 
+add_library(citadel STATIC IMPORTED)
+set_target_properties(citadel PROPERTIES IMPORTED_LOCATION ${citadel_DIR}/lib/android/${ANDROID_ABI}/libcitadel.a)
+
 add_library(
     app-glue
     STATIC
     ${ANDROID_NDK}/sources/android/native_app_glue/android_native_app_glue.c
 )
 
-
 find_library(
     log-lib
     log
 )
 
+target_include_directories(citadel-sample PRIVATE ${citadel_DIR})
+
 target_link_libraries(
     citadel-sample
+    citadel
     app-glue
 
     -landroid

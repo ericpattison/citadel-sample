@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 public class CitadelActivity extends NativeActivity {
     static {
-        //System.loadLibrary("citadel");
+        System.loadLibrary("citadel-sample");
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
