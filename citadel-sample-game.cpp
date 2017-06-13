@@ -1,5 +1,5 @@
 #include "castle/game/Game.h"
-#include <android_native_app_glue.h>
+//#include <android_native_app_glue.h>
 
 class CitadelSampleGame : public Game {
 public:
@@ -10,5 +10,7 @@ public:
 private:
 };
 
-UPtr<Game> createGame() { app_dummy(); return MakeUPtr<CitadelSampleGame>(); }
+UPtr<Game> createGame() { 
+	return MakeUPtr<CitadelSampleGame>();
+}
 GameRegistrar registrar(createGame);
