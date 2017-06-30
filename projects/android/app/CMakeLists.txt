@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 set(citadel_DIR ${CMAKE_SOURCE_DIR}/../../../citadel)
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -u ANativeActivity_onCreate")
 
 include_directories(
     ${ANDROID_NDK}/sources/android/native_app_glue
