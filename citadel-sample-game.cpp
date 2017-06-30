@@ -1,16 +1,19 @@
 #include "castle/game/Game.h"
-//#include <android_native_app_glue.h>
+#include "watchtower/Color.h"
 
 class CitadelSampleGame : public Game {
 public:
-	CitadelSampleGame():Game() { }
+	CitadelSampleGame(SPtr<Device> device):Game() {
+        Color clearColor(127, 66, 255, 255);
+        device->SetClearColor(clearColor);
+    }
 
 	virtual void Update(){}
 	virtual void Render(){}
 private:
 };
 
-UPtr<Game> createGame() { 
-	return MakeUPtr<CitadelSampleGame>();
+UPtr<Game> createGame(SPtr<Device> device) {
+	return MakeUPtr<CitadelSampleGame>(device);
 }
 GameRegistrar registrar(createGame);

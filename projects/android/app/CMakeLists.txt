@@ -4,6 +4,7 @@ set(citadel_DIR ${CMAKE_SOURCE_DIR}/../../../citadel)
 
 include_directories(
     ${ANDROID_NDK}/sources/android/native_app_glue
+    ${citadel_DIR}
 )
 
 add_library(
@@ -36,6 +37,9 @@ target_link_libraries(
     app-glue
 
     -landroid
+    -lEGL
+    -lGLESv3
+
 
     ${log-lib}
 )
