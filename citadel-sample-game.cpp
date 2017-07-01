@@ -4,9 +4,9 @@
 class CitadelSampleGame : public Game {
 public:
 	CitadelSampleGame(SPtr<Device> device):Game() {
-        Color clearColor(127, 66, 255, 255);
-        device->SetClearColor(clearColor);
-    }
+		Color clearColor(127, 66, 255, 255);
+		device->SetClearColor(clearColor);
+	}
 
 	virtual void Update(){}
 	virtual void Render(){}
