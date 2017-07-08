@@ -3,4 +3,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\citadel-sample-game.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\glext.h" />
+  </ItemGroup>
 </Project>

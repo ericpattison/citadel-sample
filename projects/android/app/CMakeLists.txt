@@ -41,6 +41,5 @@ target_link_libraries(
     -lEGL
     -lGLESv3
 
-
     ${log-lib}
 )
